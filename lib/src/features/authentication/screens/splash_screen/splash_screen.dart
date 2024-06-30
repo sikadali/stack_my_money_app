@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stack_my_money_app/src/constants/colors.dart';
 import 'package:stack_my_money_app/src/constants/image_strings.dart';
-import 'package:stack_my_money_app/src/features/authentication/bloc/animation/animation_bloc.dart';
+import 'package:stack_my_money_app/src/routing/app_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,13 +15,15 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    // context.read<AnimationBloc>().add(AnimateSplashScreen());
     super.initState();
-
-    // Démarrer l'animation après un court délai
-    Future.delayed(Duration(milliseconds: 500), () {
+    // small delay before logo animation
+    Future.delayed(const Duration(milliseconds: 500), () {
       setState(() {
         _opacity = 1.0;
+      });
+      // Wait for the logo animation to complete before going to the next page
+      Future.delayed(const Duration(milliseconds: 3000), () {
+        Navigator.of(context).pushNamed(AppRouter.home);
       });
     });
   }
@@ -34,14 +35,14 @@ class _SplashScreenState extends State<SplashScreen> {
     final bool isDarkMode = mediaQuery.platformBrightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: isDarkMode ? Colors.blueAccent : sSplashColor,
+      backgroundColor: isDarkMode ? sSplashDarkColor : sSplashColor,
       body: Center(
           child: AnimatedOpacity(
               opacity: _opacity,
-              duration: const Duration(seconds: 5),
+              duration: const Duration(milliseconds: 2000),
               child: isDarkMode
-                  ? Image(image: AssetImage(sSplashWhiteIcon), height: splashIconSize)
-                  : Image(image: AssetImage(sSplashBlackIcon), height: splashIconSize))),
+                  ? Image(image: const AssetImage(sSplashWhiteIcon), height: splashIconSize)
+                  : Image(image: const AssetImage(sSplashBlackIcon), height: splashIconSize))),
     );
   }
 }

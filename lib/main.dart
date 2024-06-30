@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:stack_my_money_app/src/utils/theme/theme.dart';
 
 import 'src/routing/app_router.dart';
-import 'src/features/authentication/screens/splash_screen/splash_screen.dart';
 
 void main() {
   runApp(const MainApp());

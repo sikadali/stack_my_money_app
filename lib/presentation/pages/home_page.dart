@@ -10,9 +10,9 @@ class HomePage extends StatelessWidget {
             title: const Text("STACK MY MONEY"),
             leading: const Icon(Icons.ondemand_video)),
         floatingActionButton: FloatingActionButton(
-          child:  Icon(Icons.add_shopping_cart_outlined),
+          child:  const Icon(Icons.add_shopping_cart_outlined),
           onPressed: () {},
         ),
-        body: Center(child: Text("HOME PAGE CONTENT HERE")));
+        body: const Center(child: Text("HOME PAGE CONTENT HERE")));
   }
 }
