@@ -1,0 +1,24 @@
+name: stack_my_money_app
+description: "STACK MY MONEY is a mobile financial management application that enables users to track their spending, manage their budgets and visualize their financial habits. Designed with Flutter for a fluid, responsive user experience, the app aims to simplify the management of personal finances."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+     sdk: ">=3.3.3 <4.0.0"
+
+dependencies:
+     bloc: ^8.1.4
+     flutter:
+          sdk: flutter
+     flutter_bloc: ^8.1.6
+     font_awesome_flutter: ^10.7.0
+
+dev_dependencies:
+     flutter_test:
+          sdk: flutter
+     flutter_lints: ^4.0.0
+
+flutter:
+     uses-material-design: true
+     assets:
+          - assets/images/splash_images/
