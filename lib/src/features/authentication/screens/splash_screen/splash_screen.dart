@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
             duration: const Duration(milliseconds: 2000),
             child: isDarkMode
                 ? const Image(image: AssetImage(sSplashWhiteIcon))
-                : const Image(image: AssetImage(sSplashBlackIcon))),
+                : const Image(image: AssetImage(sSplashDarkIcon))),
       )),
     );
   }

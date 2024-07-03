@@ -1,4 +1,4 @@
 
 /* -- App Image Strings -- */
-const String sSplashBlackIcon = "assets/images/splash_images/money-stack-black.png";
-const String sSplashWhiteIcon = "assets/images/splash_images/money-stack-white.png";
+const String sSplashDarkIcon = "assets/images/splash_images/SMM_icon2_dark.png";
+const String sSplashWhiteIcon = "assets/images/splash_images/SMM_icon2_white.png";
