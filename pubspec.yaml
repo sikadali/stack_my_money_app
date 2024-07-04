@@ -12,6 +12,8 @@ dependencies:
           sdk: flutter
      flutter_bloc: ^8.1.6
      font_awesome_flutter: ^10.7.0
+     liquid_swipe: ^3.1.0
+     smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
      flutter_test:
@@ -22,3 +24,21 @@ flutter:
      uses-material-design: true
      assets:
           - assets/images/splash_images/
+     fonts:
+          - family: OpenSauceOne
+            fonts:
+                 - asset: fonts/OpenSauceOne/OpenSauceOne-Regular.ttf
+                 - asset: fonts/OpenSauceOne/OpenSauceOne-Italic.ttf
+                   style: italic
+                 - asset: fonts/OpenSauceOne/OpenSauceOne-Bold.ttf
+                   weight: 700
+                 - asset: fonts/OpenSauceOne/OpenSauceOne-Light.ttf
+                   weight: 300
+                 - asset: fonts/OpenSauceOne/OpenSauceOne-Medium.ttf
+                   weight: 500
+
+          - family: TheSeasons
+            fonts:
+                 - asset: fonts/TheSeasons/Fontspring-DEMO-theseasons-regular.otf
+                 - asset: fonts/TheSeasons/Fontspring-DEMO-theseasons-light.otf
+                   weight: 300
