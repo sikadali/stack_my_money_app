@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stack_my_money_app/src/utils/theme/text_theme.dart';
 
 class SAppTheme {
   SAppTheme._();
@@ -6,20 +7,18 @@ class SAppTheme {
   static ThemeData lightTheme = ThemeData(
     primarySwatch: Colors.green,
     brightness: Brightness.light,
-    appBarTheme: const AppBarTheme(),
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(),
-    elevatedButtonTheme:
-    ElevatedButtonThemeData(style: ElevatedButton.styleFrom()),
-  );
-
-
-  static ThemeData darkTheme = ThemeData(
-    primarySwatch: Colors.green,
-    brightness: Brightness.dark,
+    textTheme: STextTheme.lightTextTheme,
     appBarTheme: const AppBarTheme(),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(),
     elevatedButtonTheme: ElevatedButtonThemeData(style: ElevatedButton.styleFrom()),
   );
 
-
+  static ThemeData darkTheme = ThemeData(
+    primarySwatch: Colors.green,
+    brightness: Brightness.dark,
+    textTheme: STextTheme.lightTextTheme,
+    appBarTheme: const AppBarTheme(),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(),
+    elevatedButtonTheme: ElevatedButtonThemeData(style: ElevatedButton.styleFrom()),
+  );
 }

@@ -24,21 +24,24 @@ flutter:
      uses-material-design: true
      assets:
           - assets/images/splash_images/
+          - assets/images/onboarding_images/
      fonts:
           - family: OpenSauceOne
             fonts:
-                 - asset: fonts/OpenSauceOne/OpenSauceOne-Regular.ttf
-                 - asset: fonts/OpenSauceOne/OpenSauceOne-Italic.ttf
+                 - asset: assets/fonts/OpenSauceOne/OpenSauceOne-Regular.ttf
+                 - asset: assets/fonts/OpenSauceOne/OpenSauceOne-Italic.ttf
                    style: italic
-                 - asset: fonts/OpenSauceOne/OpenSauceOne-Bold.ttf
+                 - asset: assets/fonts/OpenSauceOne/OpenSauceOne-Bold.ttf
                    weight: 700
-                 - asset: fonts/OpenSauceOne/OpenSauceOne-Light.ttf
+                 - asset: assets/fonts/OpenSauceOne/OpenSauceOne-Light.ttf
                    weight: 300
-                 - asset: fonts/OpenSauceOne/OpenSauceOne-Medium.ttf
+                 - asset: assets/fonts/OpenSauceOne/OpenSauceOne-Medium.ttf
                    weight: 500
 
-          - family: TheSeasons
+          - family: RoxboroughCF
             fonts:
-                 - asset: fonts/TheSeasons/Fontspring-DEMO-theseasons-regular.otf
-                 - asset: fonts/TheSeasons/Fontspring-DEMO-theseasons-light.otf
-                   weight: 300
+              - asset: assets/fonts/RoxboroughCF/RoxboroughCF-Regular.otf
+              - asset: assets/fonts/RoxboroughCF/RoxboroughCF-Light.otf
+                weight: 300
+              - asset: assets/fonts/RoxboroughCF/RoxboroughCF-Medium.otf
+                weight: 500
