@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:stack_my_money_app/src/utils/theme/text_theme.dart';
+import 'package:stack_my_money_app/src/utils/theme/widget_themes/elevated_button_theme.dart';
+import 'package:stack_my_money_app/src/utils/theme/widget_themes/outlined_button_theme.dart';
+import 'package:stack_my_money_app/src/utils/theme/widget_themes/text_theme.dart';
 
 class SAppTheme {
-  SAppTheme._();
+  SAppTheme._(); // to avoid creating instances
 
   static ThemeData lightTheme = ThemeData(
-    primarySwatch: Colors.green,
     brightness: Brightness.light,
     textTheme: STextTheme.lightTextTheme,
+    elevatedButtonTheme: SElevatedButtonTheme.lightElevatedButtonTheme,
+    outlinedButtonTheme: SOutlinedButtonTheme.lightOutlinedButtonTheme,
     appBarTheme: const AppBarTheme(),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(),
-    elevatedButtonTheme: ElevatedButtonThemeData(style: ElevatedButton.styleFrom()),
   );
 
   static ThemeData darkTheme = ThemeData(
-    primarySwatch: Colors.green,
     brightness: Brightness.dark,
-    textTheme: STextTheme.lightTextTheme,
+    textTheme: STextTheme.darkTextTheme,
+    outlinedButtonTheme: SOutlinedButtonTheme.darkOutlinedButtonTheme,
+    elevatedButtonTheme: SElevatedButtonTheme.darkElevatedButtonTheme,
     appBarTheme: const AppBarTheme(),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(),
-    elevatedButtonTheme: ElevatedButtonThemeData(style: ElevatedButton.styleFrom()),
   );
 }

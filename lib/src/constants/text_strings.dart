@@ -1,5 +1,9 @@
 /* --- App Text Strings --- */
 
+// Generic Text
+const String sLogin = "Se connecter";
+const String sSignup = "S'inscrire";
+
 // Splash Screen Text
 const String sAppName = "STACK MY MONEY";
 const String sAppTagLine = "Your money, your rules";
