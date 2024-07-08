@@ -16,7 +16,7 @@ class SFloatingActionButton extends StatelessWidget {
       child: FittedBox(
         child: FloatingActionButton(
           elevation: 0,
-          shape: const CircleBorder(),
+          shape: CircleBorder(side: BorderSide(width: 2.0, color: isDarkMode ? Colors.transparent : sSecondaryColor)),
           backgroundColor: isDarkMode ? null : sWhiteColor,
           foregroundColor: isDarkMode ? null : sSecondaryColor,
           tooltip: sTooltipNewTransaction,

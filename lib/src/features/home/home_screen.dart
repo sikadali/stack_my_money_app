@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:stack_my_money_app/src/common_widgets/bottom_nav_bar.dart';
 import 'package:stack_my_money_app/src/common_widgets/drawer.dart';
 import 'package:stack_my_money_app/src/common_widgets/floating_action_button.dart';
@@ -16,75 +17,62 @@ class HomeScreen extends StatelessWidget {
     double screenHeight = mediaQuery.size.height;
     double screenWidth = mediaQuery.size.width;
 
-    List<Widget> items = <Widget>[
-      Container(width: 100, color: Colors.red),
-      Container(width: 100, color: Colors.blue),
-      Container(width: 100, color: Colors.green),
-      Container(width: 100, color: Colors.yellow),
-      Container(width: 100, color: Colors.orange),
-      Container(width: 100, color: Colors.red),
-      Container(width: 100, color: Colors.blue),
-      Container(width: 100, color: Colors.green),
-      Container(width: 100, color: Colors.yellow),
-      Container(width: 100, color: Colors.orange),
-    ];
-
     List<Widget> transactions = [
-      TransactionItem(
+      const TransactionItem(
           icon: Icons.person,
           title: 'Money Transfer',
           time: '12:35 PM',
           amount: '-\$450',
           amountColor: Colors.red),
-      TransactionItem(
+      const TransactionItem(
           icon: Icons.payment,
           title: 'Paypal',
           time: '10:20 AM',
           amount: '+\$1200',
           amountColor: Colors.green),
-      TransactionItem(
+      const TransactionItem(
           icon: Icons.directions_car,
           title: 'Uber',
           time: '08:40 AM',
           amount: '-\$150',
           amountColor: Colors.red),
-      TransactionItem(
+      const TransactionItem(
           icon: Icons.store,
           title: 'Bata Store',
           time: 'Yesterday',
           amount: '-\$200',
           amountColor: Colors.red),
-      TransactionItem(
+      const TransactionItem(
           icon: Icons.monetization_on_outlined,
           title: 'Bank Transfer',
           time: 'Yesterday',
           amount: '-\$600',
           amountColor: Colors.red),
-      TransactionItem(
+      const TransactionItem(
           icon: Icons.person,
           title: 'Money Transfer',
           time: '12:35 PM',
           amount: '-\$450',
           amountColor: Colors.red),
-      TransactionItem(
+      const TransactionItem(
           icon: Icons.payment,
           title: 'Paypal',
           time: '10:20 AM',
           amount: '+\$1200',
           amountColor: Colors.green),
-      TransactionItem(
+      const TransactionItem(
           icon: Icons.directions_car,
           title: 'Uber',
           time: '08:40 AM',
           amount: '-\$150',
           amountColor: Colors.red),
-      TransactionItem(
+      const TransactionItem(
           icon: Icons.store,
           title: 'Bata Store',
           time: 'Yesterday',
           amount: '-\$200',
           amountColor: Colors.red),
-      TransactionItem(
+      const TransactionItem(
           icon: Icons.monetization_on_outlined,
           title: 'Bank Transfer',
           time: 'Yesterday',
@@ -93,16 +81,16 @@ class HomeScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: SNavBar(),
-      drawer: SDrawer(),
-      bottomNavigationBar: SBottomNavBar(),
+      appBar: const SNavBar(),
+      drawer: const SDrawer(),
+      bottomNavigationBar: const SBottomNavBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: SFloatingActionButton(),
+      floatingActionButton: const SFloatingActionButton(),
       body: Column(
         children: [
-          Container(height: screenHeight / 25, child: MonthCarousel()),
+          SizedBox(height: screenHeight / 20, child: const MonthCarousel()),
           Container(
-              padding: EdgeInsets.symmetric(vertical: 30),
+              padding: const EdgeInsets.symmetric(vertical: 30),
               width: screenWidth,
               color: sPrimaryColor,
               child: Row(
@@ -115,30 +103,16 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Text("2500 €", style: Theme.of(context).textTheme.titleLarge)
                   ]),
-                  VerticalDivider(),
+                  const VerticalDivider(),
                   Column(children: [
                     Text("Depenses", style: Theme.of(context).textTheme.displayMedium),
                     Text("1500 €", style: Theme.of(context).textTheme.titleLarge)
                   ]),
                 ],
               )),
-          SizedBox(height: 20),
-          Container(
-            height: 100,
-            padding: const EdgeInsets.symmetric(horizontal: sDefaultSize),
-            child: ListView.separated(
-              // This next line does the trick.
-              scrollDirection: Axis.horizontal,
-              itemCount: items.length,
-              separatorBuilder: (context, index) {
-                return SizedBox(width: 10.0); // Add spacing of 10.0 between each item
-              },
-              itemBuilder: (context, index) {
-                return items[index];
-              },
-            ),
-          ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
+          SCarouselSliderWidget(screenWidth: screenWidth),
+          const SizedBox(height: 20),
           Padding(
               padding: const EdgeInsets.only(left: sDefaultSize),
               child: Row(
@@ -146,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                   Text("Dernieres transactions", style: Theme.of(context).textTheme.bodyLarge),
                 ],
               )),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Expanded(
             child: ListView(
               children: transactions,
@@ -154,6 +128,67 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class SCarouselSliderWidget extends StatefulWidget {
+  const SCarouselSliderWidget({
+    super.key,
+    required this.screenWidth,
+  });
+
+  final double screenWidth;
+
+  @override
+  State<SCarouselSliderWidget> createState() => _SCarouselSliderWidgetState();
+}
+
+class _SCarouselSliderWidgetState extends State<SCarouselSliderWidget> {
+  int _currentIndex = 1;
+  @override
+  Widget build(BuildContext context) {
+    List<Widget> stats = [
+      Column(
+        children: [
+          Text("Solde Restant", style: Theme.of(context).textTheme.displayMedium),
+          Text("1000 €", style: Theme.of(context).textTheme.titleLarge)
+        ],
+      ),
+      Column(
+        children: [
+          Text("Solde Final Prédit", style: Theme.of(context).textTheme.displayMedium),
+          Text("52.34 €", style: Theme.of(context).textTheme.titleLarge)
+        ],
+      )
+    ];
+
+    return Column(
+      children: [
+        Container(
+            height: 90,
+            width: widget.screenWidth,
+            padding: const EdgeInsets.symmetric(horizontal: sDefaultSize),
+            child: CarouselSlider(
+              options: CarouselOptions(
+                viewportFraction: 1,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
+              ),
+              items: stats,
+            )),
+        AnimatedSmoothIndicator(
+          activeIndex: _currentIndex,
+          count: stats.length,
+          effect: const WormEffect(
+              activeDotColor: Color(0xff272727),
+              dotHeight: 5.0
+          ),
+        )
+      ],
     );
   }
 }
@@ -203,6 +238,9 @@ class _MonthCarouselState extends State<MonthCarousel> {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryData mediaQuery = MediaQuery.of(context);
+    double screenWidth = mediaQuery.size.width;
+
     return GestureDetector(
       onHorizontalDragEnd: (details) {
         if (details.primaryVelocity != null && details.primaryVelocity! < 0) {
@@ -215,16 +253,20 @@ class _MonthCarouselState extends State<MonthCarousel> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
-            icon: Icon(Icons.arrow_left),
+            icon: const Icon(Icons.arrow_left),
             onPressed: _previousMonth,
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text('${months[_selectedDate.month - 1]} ${_selectedDate.year}',
-                style: Theme.of(context).textTheme.bodyLarge),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            width: screenWidth / 2,
+            child: Text(
+              '${months[_selectedDate.month - 1]} ${_selectedDate.year}',
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
           ),
           IconButton(
-            icon: Icon(Icons.arrow_right),
+            icon: const Icon(Icons.arrow_right),
             onPressed: _nextMonth,
           ),
         ],
@@ -240,7 +282,7 @@ class TransactionItem extends StatelessWidget {
   final String amount;
   final Color amountColor;
 
-  TransactionItem({
+  const TransactionItem({super.key,
     required this.icon,
     required this.title,
     required this.time,
