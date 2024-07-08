@@ -29,109 +29,67 @@ class HomeScreen extends StatelessWidget {
       Container(width: 100, color: Colors.orange),
     ];
 
-    List<Widget> transactions = <Widget>[
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Lidl")]),
-          Row(
-            children: [
-              Text(
-                "50,59 €",
-                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
-              ),
-              Icon(Icons.star_border),
-            ],
-          )
-        ],
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Lidl")]),
-          Row(
-            children: [
-              Text(
-                "50,59 €",
-                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
-              ),
-              Icon(Icons.star_border),
-            ],
-          )
-        ],
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Lidl")]),
-          Row(
-            children: [
-              Text(
-                "50,59 €",
-                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
-              ),
-              Icon(Icons.star_border),
-            ],
-          )
-        ],
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Lidl")]),
-          Row(
-            children: [
-              Text(
-                "50,59 €",
-                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
-              ),
-              Icon(Icons.star_border),
-            ],
-          )
-        ],
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Lidl")]),
-          Row(
-            children: [
-              Text(
-                "50,59 €",
-                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
-              ),
-              Icon(Icons.star_border),
-            ],
-          )
-        ],
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Auchan")]),
-          Row(
-            children: [
-              Text(
-                "50 €",
-                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
-              ),
-              Icon(Icons.star_border),
-            ],
-          )
-        ],
-      )
+    List<Widget> transactions = [
+      TransactionItem(
+          icon: Icons.person,
+          title: 'Money Transfer',
+          time: '12:35 PM',
+          amount: '-\$450',
+          amountColor: Colors.red),
+      TransactionItem(
+          icon: Icons.payment,
+          title: 'Paypal',
+          time: '10:20 AM',
+          amount: '+\$1200',
+          amountColor: Colors.green),
+      TransactionItem(
+          icon: Icons.directions_car,
+          title: 'Uber',
+          time: '08:40 AM',
+          amount: '-\$150',
+          amountColor: Colors.red),
+      TransactionItem(
+          icon: Icons.store,
+          title: 'Bata Store',
+          time: 'Yesterday',
+          amount: '-\$200',
+          amountColor: Colors.red),
+      TransactionItem(
+          icon: Icons.monetization_on_outlined,
+          title: 'Bank Transfer',
+          time: 'Yesterday',
+          amount: '-\$600',
+          amountColor: Colors.red),
+      TransactionItem(
+          icon: Icons.person,
+          title: 'Money Transfer',
+          time: '12:35 PM',
+          amount: '-\$450',
+          amountColor: Colors.red),
+      TransactionItem(
+          icon: Icons.payment,
+          title: 'Paypal',
+          time: '10:20 AM',
+          amount: '+\$1200',
+          amountColor: Colors.green),
+      TransactionItem(
+          icon: Icons.directions_car,
+          title: 'Uber',
+          time: '08:40 AM',
+          amount: '-\$150',
+          amountColor: Colors.red),
+      TransactionItem(
+          icon: Icons.store,
+          title: 'Bata Store',
+          time: 'Yesterday',
+          amount: '-\$200',
+          amountColor: Colors.red),
+      TransactionItem(
+          icon: Icons.monetization_on_outlined,
+          title: 'Bank Transfer',
+          time: 'Yesterday',
+          amount: '-\$600',
+          amountColor: Colors.red),
     ];
 
     return Scaffold(
@@ -189,38 +147,11 @@ class HomeScreen extends StatelessWidget {
                 ],
               )),
           SizedBox(height: 20),
-          Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                height: screenHeight * 0.4,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xff1E1E1E),
-                      spreadRadius: 1.0,
-                    ),
-                  ],
-                ),
-                // child: Column(
-                //   children: transactions,
-                // ),
-                child: ListView.separated(
-                  // This next line does the trick.
-                  scrollDirection: Axis.vertical,
-                  itemCount: transactions.length,
-                  separatorBuilder: (context, index) {
-                    return SizedBox(height: 50.0); // Add spacing of 10.0 between each item
-                  },
-                  itemBuilder: (context, index2) {
-                    return transactions[index2];
-                  },
-                ),
-              )
-            ],
-          )
+          Expanded(
+            child: ListView(
+              children: transactions,
+            ),
+          ),
         ],
       ),
     );
@@ -297,6 +228,37 @@ class _MonthCarouselState extends State<MonthCarousel> {
             onPressed: _nextMonth,
           ),
         ],
+      ),
+    );
+  }
+}
+
+class TransactionItem extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String time;
+  final String amount;
+  final Color amountColor;
+
+  TransactionItem({
+    required this.icon,
+    required this.title,
+    required this.time,
+    required this.amount,
+    required this.amountColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: CircleAvatar(
+        child: Icon(icon),
+      ),
+      title: Text(title),
+      subtitle: Text(time),
+      trailing: Text(
+        amount,
+        style: TextStyle(color: amountColor),
       ),
     );
   }
