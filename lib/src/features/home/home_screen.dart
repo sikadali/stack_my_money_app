@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     double screenHeight = mediaQuery.size.height;
     double screenWidth = mediaQuery.size.width;
 
-    List items = <Widget>[
+    List<Widget> items = <Widget>[
       Container(width: 100, color: Colors.red),
       Container(width: 100, color: Colors.blue),
       Container(width: 100, color: Colors.green),
@@ -27,6 +27,111 @@ class HomeScreen extends StatelessWidget {
       Container(width: 100, color: Colors.green),
       Container(width: 100, color: Colors.yellow),
       Container(width: 100, color: Colors.orange),
+    ];
+
+    List<Widget> transactions = <Widget>[
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Lidl")]),
+          Row(
+            children: [
+              Text(
+                "50,59 €",
+                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
+              ),
+              Icon(Icons.star_border),
+            ],
+          )
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Lidl")]),
+          Row(
+            children: [
+              Text(
+                "50,59 €",
+                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
+              ),
+              Icon(Icons.star_border),
+            ],
+          )
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Lidl")]),
+          Row(
+            children: [
+              Text(
+                "50,59 €",
+                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
+              ),
+              Icon(Icons.star_border),
+            ],
+          )
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Lidl")]),
+          Row(
+            children: [
+              Text(
+                "50,59 €",
+                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
+              ),
+              Icon(Icons.star_border),
+            ],
+          )
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Lidl")]),
+          Row(
+            children: [
+              Text(
+                "50,59 €",
+                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
+              ),
+              Icon(Icons.star_border),
+            ],
+          )
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text("Courses", style: TextStyle(fontSize: 25)), Text("Auchan")]),
+          Row(
+            children: [
+              Text(
+                "50 €",
+                style: TextStyle(fontSize: 30, color: Colors.lightGreen),
+              ),
+              Icon(Icons.star_border),
+            ],
+          )
+        ],
+      )
     ];
 
     return Scaffold(
@@ -89,6 +194,7 @@ class HomeScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 margin: const EdgeInsets.symmetric(horizontal: 10),
+                height: screenHeight * 0.4,
                 decoration: BoxDecoration(
                   color: Colors.black,
                   boxShadow: [
@@ -98,27 +204,19 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                          Text("Courses", style: TextStyle(fontSize: 25)),
-                          Text("Lidl")
-                        ]),
-                        Row(
-                          children: [
-                            Text(
-                              "50,59 €",
-                              style: TextStyle(fontSize: 30, color: Colors.lightGreen),
-                            ),
-                            Icon(Icons.star_border),
-                          ],
-                        )
-                      ],
-                    )
-                  ],
+                // child: Column(
+                //   children: transactions,
+                // ),
+                child: ListView.separated(
+                  // This next line does the trick.
+                  scrollDirection: Axis.vertical,
+                  itemCount: transactions.length,
+                  separatorBuilder: (context, index) {
+                    return SizedBox(height: 50.0); // Add spacing of 10.0 between each item
+                  },
+                  itemBuilder: (context, index2) {
+                    return transactions[index2];
+                  },
                 ),
               )
             ],
