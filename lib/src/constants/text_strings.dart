@@ -18,3 +18,14 @@ const String sOnBoardingSubTitle3 = "Créez des budgets personnalisés pour chaq
 const String sOnBoardingCounter1 = "1/3";
 const String sOnBoardingCounter2 = "2/3";
 const String sOnBoardingCounter3 = "3/3";
+
+// Drawer Text
+const String sDrawerHome = "Accueil";
+const String sDrawerTransactions = "Transactions";
+const String sDrawerGoals = "Objectifs";
+const String sDrawerBudget = "Budget";
+const String sDrawerSettings = "Paramètres";
+const String sDrawerLogout = "Déconnexion";
+
+// Tooltip Text
+const String sTooltipNewTransaction = "Nouvelle Transaction";

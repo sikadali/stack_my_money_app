@@ -26,6 +26,7 @@ flutter:
           - assets/images/splash_images/
           - assets/images/onboarding_images/
           - assets/images/welcome_images/
+          - assets/images/home_images/
      fonts:
           - family: OpenSauceOne
             fonts:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stack_my_money_app/src/features/home/home_screen.dart';
 
 import 'package:stack_my_money_app/src/features/no_page.dart';
 import 'package:stack_my_money_app/src/features/authentication/screens/onboarding/onboarding_screen.dart';
@@ -19,6 +20,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const OnboardingScreen());
       case '/welcome':
         return MaterialPageRoute(builder: (_) => const WelcomeScreen());
+      case '/home':
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const NoPage());

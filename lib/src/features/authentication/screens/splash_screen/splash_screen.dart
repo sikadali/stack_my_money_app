@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
       });
       // Wait for the logo animation to complete before going to the next page
       Future.delayed(const Duration(milliseconds: 3000), () {
-        Navigator.of(context).popAndPushNamed(AppRouter.welcome);
+        Navigator.of(context).popAndPushNamed(AppRouter.home);
       });
     });
   }

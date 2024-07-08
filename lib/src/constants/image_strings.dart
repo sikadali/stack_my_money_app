@@ -14,3 +14,8 @@ const String sOnBoardingImage3 = "assets/images/onboarding_images/data_check_onb
 const String sWelcomeScreenImage = "assets/images/welcome_images/welcome_relax.png";
 const String ssWelcomeWhiteLogoAndSlogan = "assets/images/welcome_images/SMM_logoAndSlogan_white.png";
 const String ssWelcomeDarkLogoAndSlogan = "assets/images/welcome_images/SMM_logoAndSlogan_dark.png";
+
+// Home Screen Images
+const String sHomeScreenDarkImage = "assets/images/home_images/SMM_logo1_dark.png";
+const String sHomeScreenWhiteImage = "assets/images/home_images/SMM_logo1_white.png";
+
