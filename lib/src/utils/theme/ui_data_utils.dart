@@ -5,6 +5,30 @@ import 'package:stack_my_money_app/src/constants/icons.dart';
 import 'package:stack_my_money_app/src/constants/text_strings.dart';
 
 class UIDataUtils {
+  static List<Couple<IconData, String>> getDropdownItemsForTransactionType() {
+    return <Couple<IconData, String>>[
+      Couple(sExpensesIcon, sExpenses),
+      Couple(sIncomesIcon, sIncomes)
+    ];
+  }
+
+  static List<Couple<IconData, String>> getDropdownItemsForTransactionCategory() {
+    return <Couple<IconData, String>>[
+      Couple(sShoppingIcon, sShopping),
+      Couple(sRentIcon, sRent),
+      Couple(sRestaurantIcon, sRestaurant),
+      Couple(sTransportIcon, sTransport)
+    ];
+  }
+
+  static List<Couple<Image, String>> getDropdownItemsForCurrencies() {
+    return <Couple<Image, String>>[
+      Couple(Image.asset('icons/currency/${sEur.toLowerCase()}.png', package: 'currency_icons', height: 50, width: 50), sEur),
+      Couple(Image.asset('icons/currency/${sXof.toLowerCase()}.png', package: 'currency_icons', height: 50, width: 50), sXof),
+      Couple(Image.asset('icons/currency/${sUsd.toLowerCase()}.png', package: 'currency_icons', height: 50, width: 50), sUsd),
+    ];
+  }
+
   static getStats(BuildContext context) {
     return [
       Column(
@@ -84,22 +108,6 @@ class UIDataUtils {
           time: 'Yesterday',
           amount: '-\$600',
           amountColor: Colors.red),
-    ];
-  }
-
-  static List<Couple<IconData, String>> getDropdownItemsForTransactionType() {
-    return <Couple<IconData, String>>[
-      Couple(sExpensesIcon, sExpenses),
-      Couple(sIncomesIcon, sIncomes)
-    ];
-  }
-
-  static List<Couple<IconData, String>> getDropdownItemsForTransactionCategory() {
-    return <Couple<IconData, String>>[
-      Couple(sShoppingIcon, sShopping),
-      Couple(sRentIcon, sRent),
-      Couple(sRestaurantIcon, sRestaurant),
-      Couple(sTransportIcon, sTransport)
     ];
   }
 }

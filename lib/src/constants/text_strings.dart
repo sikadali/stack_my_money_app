@@ -30,11 +30,21 @@ const String sDrawerLogout = "Déconnexion";
 // Tooltip Text
 const String sTooltipNewTransaction = "Nouvelle Transaction";
 
-// Transaction Text
+// Transaction Type Text
 const String sExpenses = "Dépenses";
 const String sIncomes = "Revenus";
 
+// Transaction Category Text
 const String sRent = "Loyer";
 const String sShopping = "Courses";
 const String sRestaurant = "Cantine";
 const String sTransport = "Transport";
+
+// Transaction Currency Text
+const String sEur = "EUR";
+const String sXof = "XOF";
+const String sUsd = "USD";
+
+// Transaction hint Text
+const String sTransactionAmountHintText = 'Montant...';
+const String sTransactionNameHintText = 'Nom de la transaction...';

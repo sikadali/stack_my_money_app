@@ -8,7 +8,7 @@ class STextTheme {
       displayMedium: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300, fontSize: 30),
       displayLarge: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300), //headline
       titleSmall: TextStyle(fontFamily: "RoxboroughCF", fontWeight: FontWeight.w500, fontSize: 20), //subtitle
-      titleLarge: TextStyle(fontFamily: "RoxboroughCF", fontWeight: FontWeight.w500, fontSize: 30), //subtitle
+      titleLarge: TextStyle(fontFamily: "RoxboroughCF", fontWeight: FontWeight.w500, fontSize: 35), //subtitle
       bodyLarge: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300, color: sDarkColor), // body
       headlineSmall: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300)
       );
@@ -17,7 +17,7 @@ class STextTheme {
     displayMedium: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300, fontSize: 30),
     displayLarge: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300),
     titleSmall: TextStyle(fontFamily: "RoxboroughCF", fontWeight: FontWeight.w500, fontSize: 20),
-    titleLarge: TextStyle(fontFamily: "RoxboroughCF", fontWeight: FontWeight.w500, fontSize: 30),
+    titleLarge: TextStyle(fontFamily: "RoxboroughCF", fontWeight: FontWeight.w500, fontSize: 35),
     bodyLarge: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300),
     headlineSmall: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300)
   );

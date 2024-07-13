@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stack_my_money_app/src/constants/icons.dart';
 
 class SMonthCarousel extends StatefulWidget {
   const SMonthCarousel({super.key});
@@ -60,7 +61,7 @@ class _SMonthCarouselState extends State<SMonthCarousel> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
-            icon: const Icon(Icons.arrow_left),
+            icon: const Icon(sArrowLeftIcon),
             onPressed: _previousMonth,
           ),
           Container(
@@ -73,7 +74,7 @@ class _SMonthCarouselState extends State<SMonthCarousel> {
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.arrow_right),
+            icon: const Icon(sArrowRightIcon),
             onPressed: _nextMonth,
           ),
         ],

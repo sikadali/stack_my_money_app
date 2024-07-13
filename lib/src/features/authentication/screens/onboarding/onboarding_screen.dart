@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:stack_my_money_app/src/constants/colors.dart';
+import 'package:stack_my_money_app/src/constants/icons.dart';
 import 'package:stack_my_money_app/src/constants/image_strings.dart';
 import 'package:stack_my_money_app/src/constants/text_strings.dart';
 import 'package:stack_my_money_app/src/features/authentication/models/onboarding_model.dart';
@@ -57,7 +58,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         LiquidSwipe(
           pages: pages,
           liquidController: controller,
-          slideIconWidget: const Icon(Icons.arrow_back_ios),
+          slideIconWidget: const Icon(sArrowLeftIcon),
           enableSideReveal: true,
           onPageChangeCallback: onPageChangedCallback,
         ),
@@ -73,7 +74,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Container(
                   padding: const EdgeInsets.all(20.0),
                   decoration: const BoxDecoration(color: sDarkColor, shape: BoxShape.circle),
-                  child: const Icon(Icons.arrow_forward_ios)),
+                  child: const Icon(sArrowRightIcon)),
             )),
         Positioned(
             top: 50.0,

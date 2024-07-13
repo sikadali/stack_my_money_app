@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stack_my_money_app/src/common_widgets/dropdown_menu.dart';
+import 'package:stack_my_money_app/src/common_widgets/input_transaction_amount_widget.dart';
 import 'package:stack_my_money_app/src/constants/colors.dart';
-import 'package:stack_my_money_app/src/constants/text_strings.dart';
 import 'package:stack_my_money_app/src/utils/theme/ui_data_utils.dart';
 
 class EditTransactionWidget extends StatefulWidget {
@@ -12,9 +12,7 @@ class EditTransactionWidget extends StatefulWidget {
 }
 
 class _EditTransactionWidgetState extends State<EditTransactionWidget> {
-  String transactionType = sExpenses;
-  String category = sShopping;
-  double amount = 25.00;
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +33,8 @@ class _EditTransactionWidgetState extends State<EditTransactionWidget> {
             ],
           ),
           const SizedBox(height: 20),
-          TextField(
+          const InputTransactionAmountWidget()
+          /*TextField(
             textAlign: TextAlign.center,
             style: const TextStyle(fontSize: 36),
             decoration: const InputDecoration(
@@ -95,6 +94,7 @@ class _EditTransactionWidgetState extends State<EditTransactionWidget> {
               }),
             ),
           ),
+          */
         ],
       ),
     );

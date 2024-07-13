@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stack_my_money_app/src/common_widgets/edit_transaction_widget.dart';
 import 'package:stack_my_money_app/src/constants/colors.dart';
+import 'package:stack_my_money_app/src/constants/icons.dart';
 import 'package:stack_my_money_app/src/constants/text_strings.dart';
 
 class SFloatingActionButton extends StatelessWidget {
@@ -33,7 +34,7 @@ class SFloatingActionButton extends StatelessWidget {
               },
             );
           },
-          child: const Icon(Icons.add),
+          child: const Icon(sAddTransactionIcon),
         ),
       ),
     );

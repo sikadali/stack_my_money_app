@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stack_my_money_app/src/constants/icons.dart';
 import 'package:stack_my_money_app/src/constants/image_strings.dart';
 
 class SNavBar extends StatelessWidget implements PreferredSizeWidget  {
@@ -12,7 +13,7 @@ class SNavBar extends StatelessWidget implements PreferredSizeWidget  {
     return AppBar(
       actions: [
         IconButton(
-          icon: const Icon(Icons.notifications),
+          icon: const Icon(sNotificationsIcon),
           onPressed: () {},
         )
       ],

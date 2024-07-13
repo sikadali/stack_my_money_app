@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stack_my_money_app/src/constants/colors.dart';
+import 'package:stack_my_money_app/src/constants/icons.dart';
 
 class SDropDownMenu extends StatefulWidget {
   const SDropDownMenu({super.key, required this.color, required this.items});
 
-  final List<Couple<IconData, String>> items;
+  final List<Couple> items;
   final Color color;
 
   @override
@@ -12,12 +13,12 @@ class SDropDownMenu extends StatefulWidget {
 }
 
 class _SDropDownMenuState extends State<SDropDownMenu> {
-  late String displayValue;
+  late String _displayValue;
 
   @override
   void initState() {
     super.initState();
-    displayValue = widget.items[0].text;
+    _displayValue = widget.items[0].text;
   }
 
   @override
@@ -27,13 +28,13 @@ class _SDropDownMenuState extends State<SDropDownMenu> {
       color: widget.color,
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
-          value: displayValue,
+          value: _displayValue,
           items: widget.items.map((Couple value) {
             return DropdownMenuItem<String>(
               value: value.text,
               child: Row(
                 children: [
-                  Icon(value.icon),
+                  value.icon is IconData ? Icon(value.icon) : value.icon,
                   const SizedBox(width: 10),
                   Text(value.text.toUpperCase()),
                 ],
@@ -42,10 +43,10 @@ class _SDropDownMenuState extends State<SDropDownMenu> {
           }).toList(),
           onChanged: (String? newValue) {
             setState(() {
-              displayValue = newValue!;
+              _displayValue = newValue!;
             });
           },
-          icon: const Icon(Icons.keyboard_arrow_down, color: sDarkColor),
+          icon: const Icon(sExpandIcon, color: sDarkColor),
           style: const TextStyle(color: Colors.black, fontSize: 16),
           dropdownColor: Colors.white,
         ),
