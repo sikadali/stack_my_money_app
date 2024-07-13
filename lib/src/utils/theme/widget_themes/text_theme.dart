@@ -9,7 +9,8 @@ class STextTheme {
       displayLarge: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300), //headline
       titleSmall: TextStyle(fontFamily: "RoxboroughCF", fontWeight: FontWeight.w500, fontSize: 20), //subtitle
       titleLarge: TextStyle(fontFamily: "RoxboroughCF", fontWeight: FontWeight.w500, fontSize: 30), //subtitle
-      bodyLarge: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300, color: sDarkColor) // body
+      bodyLarge: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300, color: sDarkColor), // body
+      headlineSmall: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300)
       );
 
   static TextTheme darkTextTheme = const TextTheme(
@@ -18,5 +19,6 @@ class STextTheme {
     titleSmall: TextStyle(fontFamily: "RoxboroughCF", fontWeight: FontWeight.w500, fontSize: 20),
     titleLarge: TextStyle(fontFamily: "RoxboroughCF", fontWeight: FontWeight.w500, fontSize: 30),
     bodyLarge: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300),
+    headlineSmall: TextStyle(fontFamily: "OpenSauceOne", fontWeight: FontWeight.w300)
   );
 }

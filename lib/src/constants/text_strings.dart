@@ -29,3 +29,12 @@ const String sDrawerLogout = "Déconnexion";
 
 // Tooltip Text
 const String sTooltipNewTransaction = "Nouvelle Transaction";
+
+// Transaction Text
+const String sExpenses = "Dépenses";
+const String sIncomes = "Revenus";
+
+const String sRent = "Loyer";
+const String sShopping = "Courses";
+const String sRestaurant = "Cantine";
+const String sTransport = "Transport";

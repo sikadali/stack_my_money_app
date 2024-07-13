@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stack_my_money_app/src/common_widgets/edit_transaction_widget.dart';
 import 'package:stack_my_money_app/src/constants/colors.dart';
 import 'package:stack_my_money_app/src/constants/text_strings.dart';
 
@@ -20,7 +21,18 @@ class SFloatingActionButton extends StatelessWidget {
           backgroundColor: isDarkMode ? null : sWhiteColor,
           foregroundColor: isDarkMode ? null : sSecondaryColor,
           tooltip: sTooltipNewTransaction,
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              builder: (BuildContext context) {
+                return const FractionallySizedBox(
+                  heightFactor: 0.8,
+                  child: EditTransactionWidget(),
+                );
+              },
+            );
+          },
           child: const Icon(Icons.add),
         ),
       ),
