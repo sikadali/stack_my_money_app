@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:stack_my_money_app/src/constants/colors.dart';
 import 'package:stack_my_money_app/src/constants/icons.dart';
 
 class SDropDownMenu extends StatefulWidget {
@@ -47,8 +46,7 @@ class _SDropDownMenuState extends State<SDropDownMenu> {
             });
           },
           icon: const Icon(sExpandIcon),
-          style: const TextStyle(fontSize: 16),
-          dropdownColor: Colors.white,
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),
     );
