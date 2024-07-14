@@ -51,12 +51,44 @@ class _InputTransactionAmountWidgetState extends State<InputTransactionAmountWid
       _errorAmountText = _displayErrorTextIfEmpty(_transactionAmountController);
 
       if (_transactionAmountController.text.isNotEmpty & _transactionAmountController.text.isNotEmpty) {
-        // Display Success message
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text(sTransactionSuccessfullyCreatedText)),
-        );
+        _showConfirmationDialog();
       }
     });
+  }
+
+  void _showConfirmationDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text(sConfirmationTitleText),
+          content: Text(sWantToConfirmTransactionCreationText, style: Theme.of(context).textTheme.bodyLarge),
+          actions: <Widget>[
+            TextButton(
+              child: const Text(sCancelText),
+              onPressed: () {
+                Navigator.of(context).pop(); // Close dialogBox
+                // transaction creation cancelled
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text(sTransactionCancelledText)),
+                );
+              },
+            ),
+            TextButton(
+              child: const Text(sConfirmText),
+              onPressed: () {
+                Navigator.of(context).pop(); // Close dialogBox
+                Navigator.of(context).pop(); // Close bottomSheet
+                // transaction creation succeed
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text(sTransactionSuccessfullyCreatedText)),
+                );
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   String? _displayErrorTextIfEmpty(controller) {

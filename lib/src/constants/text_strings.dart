@@ -49,4 +49,11 @@ const String sUsd = "USD";
 const String sTransactionAmountHintText = 'Montant...';
 const String sTransactionNameHintText = 'Nom de la transaction...';
 const String sTransactionSuccessfullyCreatedText = 'Transaction créee !';
+const String sTransactionCancelledText = 'Transaction annulée';
 const String sPleaseFillThisFieldText = 'Veuillez remplir ce champ';
+
+// Transaction confirm creation text
+const String sConfirmationTitleText = "Confirmation";
+const String sWantToConfirmTransactionCreationText = "'Voulez-vous confirmer la création de la transaction ?'";
+const String sConfirmText = "Confirmer";
+const String sCancelText = "Annuler";
