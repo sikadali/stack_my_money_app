@@ -45,6 +45,8 @@ const String sEur = "EUR";
 const String sXof = "XOF";
 const String sUsd = "USD";
 
-// Transaction hint Text
+// Other Transaction Texts
 const String sTransactionAmountHintText = 'Montant...';
 const String sTransactionNameHintText = 'Nom de la transaction...';
+const String sTransactionSuccessfullyCreatedText = 'Transaction créee !';
+const String sPleaseFillThisFieldText = 'Veuillez remplir ce champ';

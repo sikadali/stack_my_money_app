@@ -9,8 +9,7 @@ class SFloatingActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MediaQueryData mediaQuery = MediaQuery.of(context);
-    final bool isDarkMode = mediaQuery.platformBrightness == Brightness.dark;
+    final bool isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
 
     return SizedBox(
       height: 70.0,
@@ -28,7 +27,7 @@ class SFloatingActionButton extends StatelessWidget {
               isScrollControlled: true,
               builder: (BuildContext context) {
                 return const FractionallySizedBox(
-                  heightFactor: 0.8,
+                  heightFactor: 0.75,
                   child: EditTransactionWidget(),
                 );
               },

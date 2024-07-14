@@ -46,8 +46,8 @@ class _SDropDownMenuState extends State<SDropDownMenu> {
               _displayValue = newValue!;
             });
           },
-          icon: const Icon(sExpandIcon, color: sDarkColor),
-          style: const TextStyle(color: Colors.black, fontSize: 16),
+          icon: const Icon(sExpandIcon),
+          style: const TextStyle(fontSize: 16),
           dropdownColor: Colors.white,
         ),
       ),

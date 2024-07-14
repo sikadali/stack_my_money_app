@@ -32,8 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    MediaQueryData mediaQuery = MediaQuery.of(context);
-    final bool isDarkMode = mediaQuery.platformBrightness == Brightness.dark;
+    final bool isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
 
     return Scaffold(
       backgroundColor: isDarkMode ? sSplashDarkColor : sSplashColor,
