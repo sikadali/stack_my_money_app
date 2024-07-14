@@ -54,6 +54,6 @@ const String sPleaseFillThisFieldText = 'Veuillez remplir ce champ';
 
 // Transaction confirm creation text
 const String sConfirmationTitleText = "Confirmation";
-const String sWantToConfirmTransactionCreationText = "'Voulez-vous confirmer la création de la transaction ?'";
+const String sWantToConfirmTransactionCreationText = "Voulez-vous confirmer la création de la transaction ?";
 const String sConfirmText = "Confirmer";
 const String sCancelText = "Annuler";
