@@ -15,50 +15,49 @@ class SNumericKeypad extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var mediaQuery = MediaQuery.of(context);
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
           children: [
             Row(children: [
-              _buildKey(mediaQuery, "1"),
-              _buildKey(mediaQuery, "2"),
-              _buildKey(mediaQuery, "3")
+              _buildKey(context, "1"),
+              _buildKey(context, "2"),
+              _buildKey(context, "3")
             ]),
             Row(children: [
-              _buildKey(mediaQuery, "4"),
-              _buildKey(mediaQuery, "5"),
-              _buildKey(mediaQuery, "6")
+              _buildKey(context, "4"),
+              _buildKey(context, "5"),
+              _buildKey(context, "6")
             ]),
             Row(children: [
-              _buildKey(mediaQuery, "7"),
-              _buildKey(mediaQuery, "8"),
-              _buildKey(mediaQuery, "9")
+              _buildKey(context, "7"),
+              _buildKey(context, "8"),
+              _buildKey(context, "9")
             ]),
             Row(children: [
-              _buildKey(mediaQuery, "0", isZero: true),
-              _buildKey(mediaQuery, ",", isDot: true)
+              _buildKey(context, "0", isZero: true),
+              _buildKey(context, ",", isDot: true)
             ]),
           ],
         ),
         Column(children: [
-          _buildKey(mediaQuery, Icons.backspace, isDelete: true),
-          _buildKey(mediaQuery, Icons.calendar_today, isCalendar: true),
-          _buildKey(mediaQuery, Icons.check, isValidation: true),
+          _buildKey(context, Icons.backspace, isDelete: true),
+          _buildKey(context, Icons.calendar_today, isCalendar: true),
+          _buildKey(context, Icons.check, isValidation: true),
         ])
       ],
     );
   }
 
-  Widget _buildKey(var mediaQuery, dynamic value,
+  Widget _buildKey(BuildContext context, dynamic value,
       {bool isDelete = false,
       bool isDot = false,
       bool isCalendar = false,
       bool isValidation = false,
       bool isZero = false}) {
 
+    var mediaQuery = MediaQuery.of(context);
     double screenWidth = mediaQuery.size.width;
     double keyPadSize = screenWidth * 0.2;
     final bool isDarkMode = mediaQuery.platformBrightness == Brightness.dark;
@@ -92,7 +91,7 @@ class SNumericKeypad extends StatelessWidget {
                 )
               : Text(
                   value.toString(),
-                  style: const TextStyle(fontSize: 30),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
         ),
       ),
