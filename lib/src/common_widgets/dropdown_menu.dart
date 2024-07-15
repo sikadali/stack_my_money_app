@@ -20,7 +20,17 @@ class _SDropDownMenuState extends State<SDropDownMenu> {
   @override
   void initState() {
     super.initState();
-    _displayValue = widget.items[0].text;
+    _displayValue = widget.items.isNotEmpty ? widget.items[0].text : '';
+  }
+  @override
+  void didUpdateWidget(SDropDownMenu oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!widget.items.any((item) => item.text == _displayValue)) {
+      // If the current value is not in the new items list, reset it
+      setState(() {
+        _displayValue = widget.items.isNotEmpty ? widget.items[0].text : '';
+      });
+    }
   }
 
   @override
@@ -44,18 +54,20 @@ class _SDropDownMenuState extends State<SDropDownMenu> {
             );
           }).toList(),
           onChanged: (String? newValue) {
-            setState(() {
-              _displayValue = newValue!;
-              if (_displayValue == sExpensesText) {
-                context
-                    .read<TransactionTypeAndCategoryBloc>()
-                    .add(ChangeTransactionTypeToExpenses());
-              } else if (_displayValue == sIncomesText) {
-                context
-                    .read<TransactionTypeAndCategoryBloc>()
-                    .add(ChangeTransactionTypeToIncomes());
-              }
-            });
+            if (newValue != null && newValue != _displayValue) {
+              setState(() {
+                _displayValue = newValue;
+                if (_displayValue == sExpensesText) {
+                  context
+                      .read<TransactionTypeAndCategoryBloc>()
+                      .add(ChangeTransactionTypeToExpenses());
+                } else if (_displayValue == sIncomesText) {
+                  context
+                      .read<TransactionTypeAndCategoryBloc>()
+                      .add(ChangeTransactionTypeToIncomes());
+                }
+              });
+            }
           },
           icon: const Icon(sExpandIcon),
           style: Theme.of(context).textTheme.bodyLarge,
@@ -65,9 +77,3 @@ class _SDropDownMenuState extends State<SDropDownMenu> {
   }
 }
 
-class Couple<A, B> {
-  final A icon;
-  final B text;
-
-  Couple(this.icon, this.text);
-}

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stack_my_money_app/src/common_widgets/dropdown_menu.dart';
 import 'package:stack_my_money_app/src/common_widgets/transaction_item.dart';
 import 'package:stack_my_money_app/src/constants/icons.dart';
 import 'package:stack_my_money_app/src/constants/text_strings.dart';
+
+import '../../features/authentication/bloc/typecategory/transaction_type_and_category_bloc.dart';
 
 class UIDataUtils {
   static List<Couple<IconData, String>> getDropdownItemsForTransactionType() {
@@ -12,28 +13,20 @@ class UIDataUtils {
     ];
   }
 
-  static List<Couple<IconData, String>> getDropdownItemsForTransactionCategoryForExpenses() {
-    return <Couple<IconData, String>>[
-      Couple(sShoppingIcon, sShoppingText),
-      Couple(sRentIcon, sRentText),
-      Couple(sRestaurantIcon, sRestaurantText),
-      Couple(sTransportIcon, sTransportText)
-    ];
-  }
-
-  static List<Couple<IconData, String>> getDropdownItemsForTransactionCategoryForIncomes() {
-    return <Couple<IconData, String>>[
-      Couple(sSalaryIcon, sSalaryText),
-      Couple(sPassiveIncomesIcon, sPassiveIncomesText),
-      Couple(sThirdPartyIncomesIcon, sThirdPartyIncomesText),
-    ];
-  }
-
   static List<Couple<Image, String>> getDropdownItemsForCurrencies() {
     return <Couple<Image, String>>[
-      Couple(Image.asset('icons/currency/${sEur.toLowerCase()}.png', package: 'currency_icons', height: 50, width: 50), sEur),
-      Couple(Image.asset('icons/currency/${sXof.toLowerCase()}.png', package: 'currency_icons', height: 50, width: 50), sXof),
-      Couple(Image.asset('icons/currency/${sUsd.toLowerCase()}.png', package: 'currency_icons', height: 50, width: 50), sUsd),
+      Couple(
+          Image.asset('icons/currency/${sEur.toLowerCase()}.png',
+              package: 'currency_icons', height: 50, width: 50),
+          sEur),
+      Couple(
+          Image.asset('icons/currency/${sXof.toLowerCase()}.png',
+              package: 'currency_icons', height: 50, width: 50),
+          sXof),
+      Couple(
+          Image.asset('icons/currency/${sUsd.toLowerCase()}.png',
+              package: 'currency_icons', height: 50, width: 50),
+          sUsd),
     ];
   }
 

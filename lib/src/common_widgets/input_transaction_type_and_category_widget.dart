@@ -13,22 +13,23 @@ class InputTransactionTypeAndCategoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        SDropDownMenu(
-            color: isDarkMode ? sSecondaryColor : sSecondaryColor2,
-            items: UIDataUtils.getDropdownItemsForTransactionType()),
-        BlocBuilder<TransactionTypeAndCategoryBloc, TransactionTypeAndCategoryState>(
-          builder: (context, state) {
-            return SDropDownMenu(
-                color: isDarkMode ? sPrimaryColor : sPrimaryColor2,
-                items: state is TransactionTypeIsExpenses
-                    ? UIDataUtils.getDropdownItemsForTransactionCategoryForExpenses()
-                    : UIDataUtils.getDropdownItemsForTransactionCategoryForIncomes());
-          },
-        ),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          SDropDownMenu(
+              color: isDarkMode ? sSecondaryColor : sSecondaryColor2,
+              items: UIDataUtils.getDropdownItemsForTransactionType()),
+          BlocBuilder<TransactionTypeAndCategoryBloc, TransactionTypeAndCategoryState>(
+            builder: (context, state) {
+                return SDropDownMenu(
+                    color: isDarkMode ? sPrimaryColor : sPrimaryColor2,
+                    items: state.items);
+            },
+          ),
+        ],
+      ),
     );
   }
 }
