@@ -7,14 +7,14 @@ import 'package:stack_my_money_app/src/constants/sizes.dart';
 import 'package:stack_my_money_app/src/constants/text_strings.dart';
 import 'package:stack_my_money_app/src/utils/theme/ui_data_utils.dart';
 
-class InputTransactionAmountWidget extends StatefulWidget {
-  const InputTransactionAmountWidget({super.key});
+class InputTransactionNameAndAmountWidget extends StatefulWidget {
+  const InputTransactionNameAndAmountWidget({super.key});
 
   @override
-  State<InputTransactionAmountWidget> createState() => _InputTransactionAmountWidgetState();
+  State<InputTransactionNameAndAmountWidget> createState() => _InputTransactionNameAndAmountWidgetState();
 }
 
-class _InputTransactionAmountWidgetState extends State<InputTransactionAmountWidget> {
+class _InputTransactionNameAndAmountWidgetState extends State<InputTransactionNameAndAmountWidget> {
   final TextEditingController _transactionAmountController = TextEditingController();
   final TextEditingController _transactionNameController = TextEditingController();
   final FocusNode _focusNode = FocusNode();

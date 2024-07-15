@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stack_my_money_app/src/constants/icons.dart';
+import 'package:stack_my_money_app/src/constants/text_strings.dart';
+import 'package:stack_my_money_app/src/features/authentication/bloc/typecategory/transaction_type_and_category_bloc.dart';
 
 class SDropDownMenu extends StatefulWidget {
   const SDropDownMenu({super.key, required this.color, required this.items});
@@ -43,6 +46,15 @@ class _SDropDownMenuState extends State<SDropDownMenu> {
           onChanged: (String? newValue) {
             setState(() {
               _displayValue = newValue!;
+              if (_displayValue == sExpensesText) {
+                context
+                    .read<TransactionTypeAndCategoryBloc>()
+                    .add(ChangeTransactionTypeToExpenses());
+              } else if (_displayValue == sIncomesText) {
+                context
+                    .read<TransactionTypeAndCategoryBloc>()
+                    .add(ChangeTransactionTypeToIncomes());
+              }
             });
           },
           icon: const Icon(sExpandIcon),

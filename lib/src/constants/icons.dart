@@ -9,9 +9,12 @@ const IconData sAddTransactionIcon = Icons.add;
 const IconData sNotificationsIcon = Icons.notifications;
 
 // Transaction Icons
-const IconData sExpensesIcon = Icons.money_off;
 const IconData sIncomesIcon = Icons.money;
+const IconData sSalaryIcon = Icons.attach_money;
+const IconData sPassiveIncomesIcon = Icons.account_balance;
+const IconData sThirdPartyIncomesIcon = Icons.business_center;
 
+const IconData sExpensesIcon = Icons.money_off;
 const IconData sRentIcon = Icons.apartment;
 const IconData sShoppingIcon = Icons.shopping_basket;
 const IconData sRestaurantIcon = Icons.restaurant;

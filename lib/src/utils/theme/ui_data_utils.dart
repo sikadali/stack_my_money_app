@@ -7,17 +7,25 @@ import 'package:stack_my_money_app/src/constants/text_strings.dart';
 class UIDataUtils {
   static List<Couple<IconData, String>> getDropdownItemsForTransactionType() {
     return <Couple<IconData, String>>[
-      Couple(sExpensesIcon, sExpenses),
-      Couple(sIncomesIcon, sIncomes)
+      Couple(sExpensesIcon, sExpensesText),
+      Couple(sIncomesIcon, sIncomesText)
     ];
   }
 
-  static List<Couple<IconData, String>> getDropdownItemsForTransactionCategory() {
+  static List<Couple<IconData, String>> getDropdownItemsForTransactionCategoryForExpenses() {
     return <Couple<IconData, String>>[
-      Couple(sShoppingIcon, sShopping),
-      Couple(sRentIcon, sRent),
-      Couple(sRestaurantIcon, sRestaurant),
-      Couple(sTransportIcon, sTransport)
+      Couple(sShoppingIcon, sShoppingText),
+      Couple(sRentIcon, sRentText),
+      Couple(sRestaurantIcon, sRestaurantText),
+      Couple(sTransportIcon, sTransportText)
+    ];
+  }
+
+  static List<Couple<IconData, String>> getDropdownItemsForTransactionCategoryForIncomes() {
+    return <Couple<IconData, String>>[
+      Couple(sSalaryIcon, sSalaryText),
+      Couple(sPassiveIncomesIcon, sPassiveIncomesText),
+      Couple(sThirdPartyIncomesIcon, sThirdPartyIncomesText),
     ];
   }
 

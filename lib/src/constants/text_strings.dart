@@ -31,14 +31,17 @@ const String sDrawerLogout = "Déconnexion";
 const String sTooltipNewTransaction = "Nouvelle Transaction";
 
 // Transaction Type Text
-const String sExpenses = "Dépenses";
-const String sIncomes = "Revenus";
+const String sExpensesText = "Dépenses";
+const String sIncomesText = "Revenus";
 
 // Transaction Category Text
-const String sRent = "Loyer";
-const String sShopping = "Courses";
-const String sRestaurant = "Cantine";
-const String sTransport = "Transport";
+const String sRentText = "Loyer";
+const String sShoppingText = "Courses";
+const String sRestaurantText = "Cantine";
+const String sTransportText = "Transport";
+const String sSalaryText = "Salaire";
+const String sPassiveIncomesText = "Revenus Passifs";
+const String sThirdPartyIncomesText = "Revenus Tierces";
 
 // Transaction Currency Text
 const String sEur = "EUR";
