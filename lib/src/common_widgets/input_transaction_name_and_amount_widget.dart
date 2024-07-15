@@ -50,7 +50,7 @@ class _InputTransactionNameAndAmountWidgetState extends State<InputTransactionNa
       _errorNameText =_displayErrorTextIfEmpty(_transactionNameController);
       _errorAmountText = _displayErrorTextIfEmpty(_transactionAmountController);
 
-      if (_transactionAmountController.text.isNotEmpty & _transactionAmountController.text.isNotEmpty) {
+      if (_transactionAmountController.text.isNotEmpty && _transactionNameController.text.isNotEmpty) {
         _showConfirmationDialog();
       }
     });
