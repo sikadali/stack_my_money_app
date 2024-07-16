@@ -10,6 +10,7 @@ dependencies:
      bloc: ^8.1.4
      carousel_slider: ^4.2.1
      currency_icons: ^0.3.0
+     decimal: ^3.0.2
      equatable: ^2.0.5
      flutter:
           sdk: flutter
