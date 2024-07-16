@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:stack_my_money_app/src/features/home/home_screen.dart';
+import 'package:stack_my_money_app/src/ui/home/home_screen.dart';
 
-import 'package:stack_my_money_app/src/features/no_page.dart';
-import 'package:stack_my_money_app/src/features/authentication/screens/onboarding/onboarding_screen.dart';
-import 'package:stack_my_money_app/src/features/authentication/screens/splash_screen/splash_screen.dart';
-import 'package:stack_my_money_app/src/features/authentication/screens/welcome/welcome_screen.dart';
+import 'package:stack_my_money_app/src/ui/no_page.dart';
+import 'package:stack_my_money_app/src/ui/authentication/screens/onboarding/onboarding_screen.dart';
+import 'package:stack_my_money_app/src/ui/authentication/screens/splash_screen/splash_screen.dart';
+import 'package:stack_my_money_app/src/ui/authentication/screens/welcome/welcome_screen.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings routeSettings) {
