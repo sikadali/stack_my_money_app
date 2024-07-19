@@ -10,12 +10,15 @@ dependencies:
      bloc: ^8.1.4
      carousel_slider: ^4.2.1
      currency_icons: ^0.3.0
+     dartz: ^0.10.1
      decimal: ^3.0.2
      equatable: ^2.0.5
      flutter:
           sdk: flutter
      flutter_bloc: ^8.1.6
      font_awesome_flutter: ^10.7.0
+     get_it: ^7.7.0
+     http: ^1.2.2
      liquid_swipe: ^3.1.0
      smooth_page_indicator: ^1.1.0
 
@@ -23,6 +26,10 @@ dev_dependencies:
      flutter_test:
           sdk: flutter
      flutter_lints: ^4.0.0
+     mockito: ^5.4.4
+     mocktail: ^1.0.4
+     bloc_test: ^9.1.7
+     build_runner: ^2.4.9
 
 flutter:
      uses-material-design: true

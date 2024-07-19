@@ -1,14 +1,14 @@
 import 'package:decimal/decimal.dart';
 import 'package:equatable/equatable.dart';
 
-class Transaction extends Equatable {
+class TransactionEntity extends Equatable {
   final String type;
   final String category;
   final String name;
   final Decimal amount;
   final String currency;
 
-  const Transaction(
+  const TransactionEntity(
       {required this.type,
       required this.category,
       required this.name,
