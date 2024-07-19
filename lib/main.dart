@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stack_my_money_app/src/ui/utils/theme/theme.dart';
 
 import 'src/ui/bloc/typecategory/transaction_type_and_category_bloc.dart';
-import 'src/routing/app_router.dart';
+import 'src/core/routing/app_router.dart';
 
 void main() {
   runApp(const MainApp());

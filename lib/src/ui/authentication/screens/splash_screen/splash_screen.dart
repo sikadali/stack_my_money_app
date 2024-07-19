@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stack_my_money_app/src/ui/constants/colors.dart';
 import 'package:stack_my_money_app/src/ui/constants/image_strings.dart';
-import 'package:stack_my_money_app/src/routing/app_router.dart';
+import 'package:stack_my_money_app/src/core/routing/app_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
